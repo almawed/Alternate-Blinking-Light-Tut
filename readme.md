@@ -1,2 +1,3 @@
 ﻿This is our new hero code, it is mainly just placeholders...
-20200926 - blinking with 2 LEDs, new task, "shoot_task_large" created.
+2020 Oct 11 - Friction wheel for 42mm turret is working, getting it to spin slow-fast-slow in this code
+This branch is used to test the friction wheel

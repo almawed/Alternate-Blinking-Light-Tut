@@ -72,7 +72,7 @@ void MX_GPIO_Init(void)
 
   GPIO_InitTypeDef GPIO_InitStruct;
 
-  /* GPIO Ports Clock Enable */
+  /* GPIO Ports Clock Enable */ //Necessary to make sure the GPIO ports actually work, do NOT comment these
   __HAL_RCC_GPIOA_CLK_ENABLE();
   __HAL_RCC_GPIOB_CLK_ENABLE();
   __HAL_RCC_GPIOC_CLK_ENABLE();
@@ -98,8 +98,9 @@ void MX_GPIO_Init(void)
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(LED_G_GPIO_Port, LED_G_Pin, GPIO_PIN_RESET);
 	
-	/*LD1 Config*/
-	HAL_GPIO_WritePin(LD1_GPIO_Port,LD1_Pin,GPIO_PIN_SET);
+	/*LD Config, set state of LD1 and LD2 */
+	HAL_GPIO_WritePin(LD1_GPIO_Port,LD1_Pin,GPIO_PIN_RESET);
+	HAL_GPIO_WritePin(LD2_GPIO_Port,LD2_Pin,GPIO_PIN_RESET);
 
   /*Configure GPIO pins : PEPin PEPin */
   GPIO_InitStruct.Pin = IST_RESET_Pin|LED_R_Pin;
@@ -156,12 +157,13 @@ void MX_GPIO_Init(void)
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(KEY_GPIO_Port, &GPIO_InitStruct);
 	
-  //Debug Light - LD1
-	GPIO_InitStruct.Pin = LD1_Pin;
-  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
-  GPIO_InitStruct.Pull = GPIO_NOPULL;
-  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-  HAL_GPIO_Init(LD1_GPIO_Port, &GPIO_InitStruct);
+	/////////////////////////Pertains to Blinking Tutorial//////////////////////////////////////////////
+  //Debug Light - LD1 
+	GPIO_InitStruct.Pin = LD1_Pin; //Pin number
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP; //Mode - Output_PP means GPIO initialized as a digital output pin (instead of an import or PWM port pin)
+  GPIO_InitStruct.Pull = GPIO_NOPULL; //Pull up/pulldown resistor setting
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW; //Frequency, usually it doesn't matter unless we get to very hgih speeds
+  HAL_GPIO_Init(LD1_GPIO_Port, &GPIO_InitStruct); //Initialization function to pass all parameters above into the pin
 	
 	//Debug Light - LD2
 	GPIO_InitStruct.Pin = LD2_Pin;
@@ -169,7 +171,9 @@ void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(LD2_GPIO_Port, &GPIO_InitStruct);
-
+	/////////////////////////Pertains to Blinking Tutorial//////////////////////////////////////////////
+	
+	
   /* EXTI interrupt init*/
   HAL_NVIC_SetPriority(EXTI15_10_IRQn, 5, 0);
   HAL_NVIC_EnableIRQ(EXTI15_10_IRQn);

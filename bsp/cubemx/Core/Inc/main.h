@@ -90,14 +90,16 @@
 #define TRIG_EXTI_IRQn EXTI15_10_IRQn
 #define IO_PROBE_Pin GPIO_PIN_12
 #define IO_PROBE_GPIO_Port GPIOD
+
 #define KEY_Pin GPIO_PIN_2
 #define KEY_GPIO_Port GPIOB
 
-//Debug Light-LD1, LD2, LD8, corresponding to LED 1, B, and G
-#define LD1_Pin GPIO_PIN_8
-#define LD1_GPIO_Port GPIOG
+//Blinking Lights-LD1, LD2, LD8, corresponding to LED 1, B, and G
+#define LD1_Pin GPIO_PIN_8 //Pin found on the schematic
+#define LD1_GPIO_Port GPIOG //Port also found on the schematic, this is pin "PG8"
 #define LD2_Pin GPIO_PIN_7
 #define LD2_GPIO_Port GPIOG
+
 #define LD8_Pin GPIO_PIN_1
 #define LD8_GPIO_Port GPIOG
 
@@ -105,6 +107,7 @@
 //Left wheel, port D, pin 15, correspond to port E on the board
 #define FW_L_Large_Pin GPIO_PIN_15
 #define FW_L_Large_GPIO_Port GPIOD
+
 
 //Define Pin 
 

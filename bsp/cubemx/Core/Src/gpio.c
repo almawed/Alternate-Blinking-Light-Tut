@@ -101,6 +101,7 @@ void MX_GPIO_Init(void)
 	/*LD Config, set state of LD1 and LD2 */
 	HAL_GPIO_WritePin(LD1_GPIO_Port,LD1_Pin,GPIO_PIN_RESET);
 	HAL_GPIO_WritePin(LD2_GPIO_Port,LD2_Pin,GPIO_PIN_RESET);
+	
 
   /*Configure GPIO pins : PEPin PEPin */
   GPIO_InitStruct.Pin = IST_RESET_Pin|LED_R_Pin;

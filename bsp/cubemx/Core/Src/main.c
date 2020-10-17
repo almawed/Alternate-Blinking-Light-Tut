@@ -128,11 +128,12 @@ int main(void)
 //	
   // /* USER CODE BEGIN 2 */
 		/////////////////////////Pertains to Blinking Tutorial//////////////////////////////////////////////
-/*LD Config, set state of LD1 and LD2 */
+/*LD Config, set state of LD1 and LD2 */ //LD1 pin is PG1, LD2 pin is PG2
 //Turn on LED H
 	HAL_GPIO_WritePin(LD1_GPIO_Port,LD1_Pin,GPIO_PIN_RESET);
 //Turn off LED G
 	HAL_GPIO_WritePin(LD2_GPIO_Port,LD2_Pin,GPIO_PIN_SET);
+	HAL_Delay(1000); //Delay to confirm that correct light is turned on
 		/////////////////////////Pertains to Blinking Tutorial//////////////////////////////////////////////
 
   /* USER CODE END 2 */

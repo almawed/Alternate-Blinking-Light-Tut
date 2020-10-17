@@ -94,14 +94,14 @@
 #define KEY_Pin GPIO_PIN_2
 #define KEY_GPIO_Port GPIOB
 
-//Blinking Lights-LD1, LD2, LD8, corresponding to LED 1, B, and G
-#define LD1_Pin GPIO_PIN_8 //Pin found on the schematic
+////////Blinking Lights-LD1, LD2 corresponding to LED G,H////////
+
+#define LD1_Pin GPIO_PIN_1 //Pin found on the schematic
 #define LD1_GPIO_Port GPIOG //Port also found on the schematic, this is pin "PG8"
-#define LD2_Pin GPIO_PIN_7
+#define LD2_Pin GPIO_PIN_2
 #define LD2_GPIO_Port GPIOG
 
-#define LD8_Pin GPIO_PIN_1
-#define LD8_GPIO_Port GPIOG
+////////////////////////////////////////////////////////////////
 
 //PWM (Red Black Blue) GPIO pin Definition
 //Left wheel, port D, pin 15, correspond to port E on the board

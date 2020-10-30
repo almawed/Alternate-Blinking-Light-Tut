@@ -130,9 +130,16 @@ int main(void)
 		/////////////////////////Pertains to Blinking Tutorial//////////////////////////////////////////////
 /*LD Config, set state of LD1 and LD2 */ //LD1 pin is PG1, LD2 pin is PG2
 //Turn on LED H
-	HAL_GPIO_WritePin(LD1_GPIO_Port,LD1_Pin,GPIO_PIN_RESET);
+	HAL_GPIO_WritePin(LED_GPIO_Port,LDA_Pin,GPIO_PIN_SET);
+	HAL_GPIO_WritePin(LED_GPIO_Port,LDB_Pin,GPIO_PIN_SET);
+	HAL_GPIO_WritePin(LED_GPIO_Port,LDC_Pin,GPIO_PIN_SET);
+	HAL_GPIO_WritePin(LED_GPIO_Port,LDD_Pin,GPIO_PIN_SET);
+	HAL_GPIO_WritePin(LED_GPIO_Port,LDE_Pin,GPIO_PIN_SET);
+	HAL_GPIO_WritePin(LED_GPIO_Port,LDF_Pin,GPIO_PIN_SET);
+	HAL_GPIO_WritePin(LED_GPIO_Port,LDG_Pin,GPIO_PIN_SET);
+	HAL_GPIO_WritePin(LED_GPIO_Port,LDH_Pin,GPIO_PIN_SET);
 //Turn off LED G
-	HAL_GPIO_WritePin(LD2_GPIO_Port,LD2_Pin,GPIO_PIN_SET);
+	
 	HAL_Delay(1000); //Delay to confirm that correct light is turned on
 		/////////////////////////Pertains to Blinking Tutorial//////////////////////////////////////////////
 
@@ -152,11 +159,41 @@ int main(void)
   while (1)
   {
 			/////////////////////////Pertains to Blinking Tutorial//////////////////////////////////////////////
-	 HAL_GPIO_TogglePin(LD1_GPIO_Port,LD1_Pin);
-	 HAL_GPIO_TogglePin(LD2_GPIO_Port,LD2_Pin);
+		HAL_GPIO_TogglePin(LED_GPIO_Port,LDA_Pin);
+		HAL_Delay(100);//Delay for 750ms	
+		
+		HAL_GPIO_TogglePin(LED_GPIO_Port,LDA_Pin);
+		HAL_GPIO_TogglePin(LED_GPIO_Port,LDB_Pin);
+		HAL_Delay(100);//Delay for 750ms	
+		
+		HAL_GPIO_TogglePin(LED_GPIO_Port,LDB_Pin);
+		HAL_GPIO_TogglePin(LED_GPIO_Port,LDC_Pin);
+		HAL_Delay(100);//Delay for 750ms
+		
+		HAL_GPIO_TogglePin(LED_GPIO_Port,LDC_Pin);
+		HAL_GPIO_TogglePin(LED_GPIO_Port,LDD_Pin);
+		HAL_Delay(100);//Delay for 750ms	
+		
+	  HAL_GPIO_TogglePin(LED_GPIO_Port,LDD_Pin);
+		HAL_GPIO_TogglePin(LED_GPIO_Port,LDE_Pin);
+		HAL_Delay(100);//Delay for 750ms
+		
+		HAL_GPIO_TogglePin(LED_GPIO_Port,LDE_Pin);
+		HAL_GPIO_TogglePin(LED_GPIO_Port,LDF_Pin);
+		HAL_Delay(100);//Delay for 750ms	
+		
+		HAL_GPIO_TogglePin(LED_GPIO_Port,LDF_Pin);
+		HAL_GPIO_TogglePin(LED_GPIO_Port,LDG_Pin);
+		HAL_Delay(100);//Delay for 750ms
+		
+		HAL_GPIO_TogglePin(LED_GPIO_Port,LDG_Pin);
+		HAL_GPIO_TogglePin(LED_GPIO_Port,LDH_Pin);
+		
+		HAL_Delay(100);//Delay for 750ms		
+		HAL_GPIO_TogglePin(LED_GPIO_Port,LDH_Pin);
 			/////////////////////////Pertains to Blinking Tutorial//////////////////////////////////////////////
 	 //Swap the states of the pins
-		HAL_Delay(750);//Delay for 750ms
+		
 
 		
 		

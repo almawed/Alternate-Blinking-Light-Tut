@@ -99,8 +99,8 @@ void MX_GPIO_Init(void)
   HAL_GPIO_WritePin(LED_G_GPIO_Port, LED_G_Pin, GPIO_PIN_RESET);
 	
 	/*LD Config, set state of LD1 and LD2 */
-	HAL_GPIO_WritePin(LD1_GPIO_Port,LD1_Pin,GPIO_PIN_RESET);
-	HAL_GPIO_WritePin(LD2_GPIO_Port,LD2_Pin,GPIO_PIN_RESET);
+	HAL_GPIO_WritePin(LED_GPIO_Port,LDG_Pin,GPIO_PIN_RESET);
+	HAL_GPIO_WritePin(LED_GPIO_Port,LDH_Pin,GPIO_PIN_RESET);
 	
 
   /*Configure GPIO pins : PEPin PEPin */
@@ -160,18 +160,13 @@ void MX_GPIO_Init(void)
 	
 	/////////////////////////Pertains to Blinking Tutorial//////////////////////////////////////////////
   //Debug Light - LD1 
-	GPIO_InitStruct.Pin = LD1_Pin; //Pin number
+	GPIO_InitStruct.Pin = LDA_Pin | LDB_Pin |LDC_Pin |LDD_Pin |LDE_Pin | LDF_Pin |LDG_Pin | LDH_Pin; //Pin number
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP; //Mode - Output_PP means GPIO initialized as a digital output pin (instead of an import or PWM port pin)
   GPIO_InitStruct.Pull = GPIO_NOPULL; //Pull up/pulldown resistor setting
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW; //Frequency, usually it doesn't matter unless we get to very hgih speeds
-  HAL_GPIO_Init(LD1_GPIO_Port, &GPIO_InitStruct); //Initialization function to pass all parameters above into the pin
+  HAL_GPIO_Init(LED_GPIO_Port, &GPIO_InitStruct); //Initialization function to pass all parameters above into the pin
 	
-	//Debug Light - LD2
-	GPIO_InitStruct.Pin = LD2_Pin;
-  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
-  GPIO_InitStruct.Pull = GPIO_NOPULL;
-  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-  HAL_GPIO_Init(LD2_GPIO_Port, &GPIO_InitStruct);
+
 	/////////////////////////Pertains to Blinking Tutorial//////////////////////////////////////////////
 	
 	

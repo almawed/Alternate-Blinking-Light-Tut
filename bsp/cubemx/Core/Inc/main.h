@@ -96,10 +96,16 @@
 
 ////////Blinking Lights-LD1, LD2 corresponding to LED G,H////////
 
-#define LD1_Pin GPIO_PIN_1 //Pin found on the schematic
-#define LD1_GPIO_Port GPIOG //Port also found on the schematic, this is pin "PG8"
-#define LD2_Pin GPIO_PIN_2
-#define LD2_GPIO_Port GPIOG
+#define LDH_Pin GPIO_PIN_1 //Pin found on the schematic
+#define LED_GPIO_Port GPIOG
+#define LDG_Pin GPIO_PIN_2
+#define LDF_Pin GPIO_PIN_3
+#define LDE_Pin GPIO_PIN_4
+#define LDD_Pin GPIO_PIN_5
+#define LDC_Pin GPIO_PIN_6
+#define LDB_Pin GPIO_PIN_7
+#define LDA_Pin GPIO_PIN_8
+
 
 ////////////////////////////////////////////////////////////////
 

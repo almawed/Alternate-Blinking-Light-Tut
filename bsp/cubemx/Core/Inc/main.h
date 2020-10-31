@@ -100,7 +100,18 @@
 #define LD1_GPIO_Port GPIOG //Port also found on the schematic, this is pin "PG8"
 #define LD2_Pin GPIO_PIN_2
 #define LD2_GPIO_Port GPIOG
-
+#define LD3_Pin GPIO_PIN_3
+#define LD3_GPIO_Port GPIOG
+#define LD4_Pin GPIO_PIN_4
+#define LD4_GPIO_Port GPIOG
+#define LD5_Pin GPIO_PIN_5
+#define LD5_GPIO_Port GPIOG
+#define LD6_Pin GPIO_PIN_6
+#define LD6_GPIO_Port GPIOG
+#define LD7_Pin GPIO_PIN_7
+#define LD7_GPIO_Port GPIOG
+#define LD8_Pin GPIO_PIN_8
+#define LD8_GPIO_Port GPIOG
 ////////////////////////////////////////////////////////////////
 
 //PWM (Red Black Blue) GPIO pin Definition

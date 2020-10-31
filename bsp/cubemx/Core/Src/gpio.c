@@ -98,9 +98,15 @@ void MX_GPIO_Init(void)
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(LED_G_GPIO_Port, LED_G_Pin, GPIO_PIN_RESET);
 	
-	/*LD Config, set state of LD1 and LD2 */
-	HAL_GPIO_WritePin(LD1_GPIO_Port,LD1_Pin,GPIO_PIN_RESET);
-	HAL_GPIO_WritePin(LD2_GPIO_Port,LD2_Pin,GPIO_PIN_RESET);
+	/*LD Config, set state of LD1 to LD8 */
+	HAL_GPIO_WritePin(LD1_GPIO_Port,LD1_Pin,GPIO_PIN_SET);
+	HAL_GPIO_WritePin(LD2_GPIO_Port,LD2_Pin,GPIO_PIN_SET);
+	HAL_GPIO_WritePin(LD3_GPIO_Port,LD3_Pin,GPIO_PIN_SET);
+	HAL_GPIO_WritePin(LD4_GPIO_Port,LD4_Pin,GPIO_PIN_SET);
+	HAL_GPIO_WritePin(LD5_GPIO_Port,LD5_Pin,GPIO_PIN_SET);
+	HAL_GPIO_WritePin(LD6_GPIO_Port,LD6_Pin,GPIO_PIN_SET);
+	HAL_GPIO_WritePin(LD7_GPIO_Port,LD7_Pin,GPIO_PIN_SET);
+	HAL_GPIO_WritePin(LD8_GPIO_Port,LD8_Pin,GPIO_PIN_SET);
 	
 
   /*Configure GPIO pins : PEPin PEPin */
@@ -172,7 +178,49 @@ void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(LD2_GPIO_Port, &GPIO_InitStruct);
-	/////////////////////////Pertains to Blinking Tutorial//////////////////////////////////////////////
+	
+	//Debug Light - LD3
+	GPIO_InitStruct.Pin = LD3_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(LD3_GPIO_Port, &GPIO_InitStruct);
+	
+	//Debug Light - LD4
+	GPIO_InitStruct.Pin = LD4_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(LD4_GPIO_Port, &GPIO_InitStruct);
+	
+	//Debug Light - LD5
+	GPIO_InitStruct.Pin = LD5_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(LD5_GPIO_Port, &GPIO_InitStruct);
+	
+	//Debug Light - LD6
+	GPIO_InitStruct.Pin = LD6_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(LD6_GPIO_Port, &GPIO_InitStruct);
+	
+	//Debug Light - LD7
+	GPIO_InitStruct.Pin = LD7_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(LD7_GPIO_Port, &GPIO_InitStruct);
+	
+	//Debug Light - LD8
+	GPIO_InitStruct.Pin = LD8_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(LD8_GPIO_Port, &GPIO_InitStruct);
+/////////////////////////Pertains to Blinking Tutorial//////////////////////////////////////////////
 	
 	
   /* EXTI interrupt init*/
